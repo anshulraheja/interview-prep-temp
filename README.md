@@ -270,3 +270,51 @@ East Natchitoches, PA 4.5000   Warne, NH 0.3636
 ```
 
 
+## Question: Maximum Discount Product
+
+**Problem Statement:**
+
+Find the product with the maximum discount for each category.
+
+- If multiple products have the same maximum discount, select the one with the smallest product ID.
+- The result should be ordered by category.
+
+**Schema:**
+
+**PRODUCT Table:**
+
+- PRODUCT_ID: Integer (Product ID)
+- CATEGORY: String (Product category)
+- DISCOUNT: Integer (Discount on product)
+
+**Steps:**
+
+1. Group products by **category**.
+2. Within each category, find the **maximum discount**.
+3. If multiple products have the same discount, pick the product with the **smallest PRODUCT_ID**.
+
+**Output Format:**
+
+- **Category** (CATEGORY)
+- **Product ID** (PRODUCT_ID)
+- **Discount** (DISCOUNT)
+
+**Example Input/Output:**
+
+**Sample Input:**  
+PRODUCT Table:
+
+|PRODUCT_ID|CATEGORY|DISCOUNT|
+|---|---|---|
+|1|C-5|10|
+|2|C-1|17|
+|3|C-2|19|
+
+**Sample Output:**
+
+```
+C-1 2 17   C-2 3 19   C-5 1 10`  
+```
+
+
+
