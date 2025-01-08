@@ -317,4 +317,57 @@ C-1 2 17   C-2 3 19   C-5 1 10`
 ```
 
 
+## Qqestion: Increase in Population
+
+**Problem Statement:**
+
+Find the year with the maximum increase in population relative to the starting population.
+
+- If there's a tie, return the **earliest year**.
+
+**Schema:**
+
+**Records Table:**
+
+- ID: Integer (Unique record ID)
+- TYPE: Char (Either `birth` or `death`)
+- YEAR: Integer (Year of birth/death)
+
+**Steps:**
+
+1. Count the number of births and deaths for each year.
+2. Calculate the **cumulative population increase** for each year.
+3. Identify the year with the **highest population increase**.
+4. If multiple years have the same maximum, return the **earliest year**.
+
+**Output Format:**
+
+- **Year**
+- **Increase in Population**
+
+**Example Input/Output:**
+
+**Sample Input:**  
+Records Table:
+
+|ID|TYPE|YEAR|
+|---|---|---|
+|2187|birth|2002|
+|9941|death|2001|
+
+**Sample Output:**
+
+```
+2003 5
+```
+
+**Explanation:**
+
+- **2002**: Births (+6), Deaths (-4) => Net +2
+- **2003**: Births (+5), Deaths (-3) => Net +5 (Highest cumulative increase)
+- **Output Year**: 2003
+
+
+
+
 
