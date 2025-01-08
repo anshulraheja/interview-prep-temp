@@ -200,3 +200,73 @@ GROUP BY user_id, market_name;
 - Optimizing the user experience for low-converting segments.
 - Offering targeted promotions or incentives for users with fewer trips.
 - Improving app performance during peak usage hours.
+
+
+## Question 
+The Good and The Bad City
+
+**Problem Statement:**
+
+A blood bank wants to determine the city with the best and worst donor-to-acceptor blood ratio.
+
+- Best ratio: Maximum donor sum amount / acceptor sum amount.
+- Worst ratio: Minimum donor sum amount / acceptor sum amount.
+- Both ratios must be unique, and the output must contain exactly two rows with:
+- City Name (CITY)
+- Ratio (correct to 4 decimal places)
+
+**Schema:**
+
+DONOR Table:
+
+- ID: Integer (Donor ID)
+- NAME: String (Donor's name)
+- GENDER: Character (Donor's gender)
+- CITY: String (Donor's city)
+- BLOOD_GROUP: String (Donor's blood group)
+- AMOUNT: Integer (Blood amount in pints)
+
+ACCEPTOR Table:
+
+- ID: Integer (Acceptor ID)
+- NAME: String (Acceptor's name)
+- GENDER: Character (Acceptor's gender)
+- CITY: String (Acceptor's city)
+- BLOOD_GROUP: String (Acceptor's blood group)
+- AMOUNT: Integer (Blood amount needed in pints)
+
+**Steps:**
+- Group the data by city in both tables.
+- Calculate the total donor blood amount and acceptor blood amount for each city.
+- Compute the ratio (donor sum / acceptor sum).
+- Identify the city with the highest and lowest ratio.
+
+**Output Format:**
+- Each row contains:
+  - City Name
+  - Ratio (correct to 4 decimal places)
+
+**Example Input/Output:**
+
+Sample Input:
+
+DONOR Table:
+
+| ID  | NAME    | GENDER | CITY                  | BLOOD_GROUP | AMOUNT |
+| --- | ------- | ------ | --------------------- | ----------- | ------ |
+| 1   | MARIA   | F      | Warne, NH             | AB+         | 7      |
+| 2   | DOROTHY | F      | East Natchitoches, PA | AB+         | 3      |
+
+ACCEPTOR Table:
+
+| ID  | NAME  | GENDER | CITY      | BLOOD_GROUP | AMOUNT |
+| --- | ----- | ------ | --------- | ----------- | ------ |
+| 1   | LINDA | F      | Warne, NH | A+          | 9      |
+
+Sample Output:
+
+```
+East Natchitoches, PA 4.5000   Warne, NH 0.3636
+```
+
+
